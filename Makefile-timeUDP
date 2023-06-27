@@ -1,0 +1,16 @@
+
+SVRS=UDPtimed.c passivesock.c passiveUDP.c errexit.c
+
+CLTS=UDPtime.c connectsock.c connectUDP.c errexit.c
+
+SVRO=UDPtimed.o passivesock.o passiveUDP.o errexit.o
+
+CLTO=UDPtime.o connectsock.o connectUDP.o errexit.o
+
+all:	UDPtimed UDPtime
+
+UDPtimed:	$(SVRS)
+	cc -o UDPtimed $(SVRS)
+
+UDPtime:	$(CLTS)
+	cc -o UDPtime $(CLTS)
